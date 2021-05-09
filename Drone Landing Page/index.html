@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drone</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./dist/style.css" />
+    <script defer src="./script/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav id="nav">
+        <a href="#"><span>Drones</span>.Series</a>
+        <div class="hamburgar" id="menu-btn">
+          <img src="./assets/menu.svg" alt="menu-icon" />
+        </div>
+        <div class="menu__container" id="menu__container">
+          <div class="close-icon" id="close-btn">
+            <img src="./assets/exit.svg" alt="exit-icon" />
+          </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Races</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Faq</a></li>
+            <li><a href="#">Contact</a></li>
+            <div class="spy"></div>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="hero">
+      <div class="hero__bg">
+        <div class="streaks"></div>
+        <div class="color-bg"></div>
+      </div>
+      <main>
+        <div class="text__content">
+          <h1>DRONE RACING GONE WILD</h1>
+          <p>
+            Register now for the ultimate drone racing event. 5 mile courses and
+            over $10 million in prize money!
+          </p>
+        </div>
+        <div class="drone__image">
+          <img src="./assets/drone.png" alt="drone--image" />
+        </div>
+      </main>
+    </div>
+    <!-- Quote Section -->
+    <section class="quote">
+      <blockquote>
+        “the stadium is simply unreal. scrimba hall will make this the best
+        drone racing event ever, period.”
+      </blockquote>
+      <cite>anonymous guy</cite>
+    </section>
+    <!-- Drone Gallery -->
+    <section class="drone">
+      <div class="drone__content">
+        <h1>last year’s footage</h1>
+        <p>
+          With over 5,000 participants, 2020 featured some of the most amazing
+          drone races from the most competitive field ever seen.
+        </p>
+        <p>
+          In 2021, we’re about to double the excitement with 10,000 race
+          participants and 100,000 fans!
+        </p>
+      </div>
+      <div class="drone__gallery">
+        <img class="img-1" src="./assets/footage-1.jpg" alt="drone-img" />
+        <img class="img-2" src="./assets/footage-2.jpg" alt="drone-img" />
+        <img class="img-3" src="./assets/footage-3.jpg" alt="drone-img" />
+        <img class="img-4" src="./assets/footage-4.jpg" alt="drone-img" />
+        <img class="img-5" src="./assets/footage-5.jpg" alt="drone-img" />
+      </div>
+    </section>
+    <!-- Form Control -->
+    <section class="formControl">
+      <div class="title">
+        <h1>register for the event!</h1>
+      </div>
+
+      <form class="form" id="form">
+        <div class="col-1" id="usernameEl">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="username" />
+          <span class="error-1">Invalid Username</span>
+        </div>
+
+        <div class="col-2" id="useremailEl">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="username" />
+          <span class="error-2">Invalid Email</span>
+        </div>
+
+        <button>Register now!</button>
+      </form>
+
+      <div class="contact">
+        <ul>
+          <li><a href="#">1-555-555-3298</a></li>
+          <li><a href="#">some@email.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

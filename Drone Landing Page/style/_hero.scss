@@ -1,0 +1,109 @@
+body .hero {
+  height: 82.5vh;
+  .hero__bg {
+    height: 100vh;
+    width: 90%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 80% auto;
+    z-index: -1;
+    .streaks {
+      background: url("../assets/streaks.jpg") $SoftGreen;
+      background-size: cover;
+      background-blend-mode: screen;
+    }
+    .color-bg {
+      background-color: $SoftBlue;
+    }
+    @include breakpoint(desktop) {
+      width: 80%;
+      grid-template-columns: 60% auto;
+    }
+  }
+  @include breakpoint(desktop) {
+    height: 84vh;
+  }
+}
+
+body .hero main {
+  margin-top: 3.8rem;
+  .text__content {
+    text-align: center;
+    margin: 2rem 4rem;
+    margin-right: 6rem;
+    h1 {
+      font-size: 3rem;
+      font-weight: normal;
+      line-height: 91.6%;
+    }
+    p {
+      font-size: 1.125rem;
+      line-height: 1.5;
+    }
+  }
+  @include breakpoint(desktop) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 3rem;
+    margin-left: 10rem;
+    > div {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+
+    .text__content {
+      text-align: left;
+      margin: 0;
+      h1 {
+        font-size: 4.8rem;
+        width: 70%;
+        line-height: 80.6%;
+        margin-bottom: 0%;
+      }
+      p {
+        width: 70%;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  @include breakpoint(large) {
+    .text__content {
+      h1 {
+        font-size: 6rem;
+      }
+    }
+  }
+}
+
+// Drone Image
+
+body .hero main {
+  .drone__image {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 7rem;
+    @include breakpoint(desktop) {
+      margin-top: 0%;
+      width: 30%;
+      img {
+        max-width: 480px;
+      }
+    }
+    img {
+      width: 100%;
+      filter: drop-shadow(5px 10px 8px rgba(0, 0, 0, 0.7));
+      animation: alternate-reverse dronePulse 2000ms infinite;
+      max-width: 400px;
+    }
+  }
+}
+
+@keyframes dronePulse {
+  from {
+    transform: translateY(-20px);
+    filter: drop-shadow(5px 40px 8px rgba(0, 0, 0, 0.1));
+  }
+}

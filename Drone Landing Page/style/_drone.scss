@@ -1,0 +1,78 @@
+body .drone {
+  width: 90%;
+  margin-left: auto;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  &__content {
+    h1 {
+      font-size: 2.25rem;
+    }
+    p {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+// Drone GALLERY
+
+body .drone {
+  &__gallery {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-areas:
+      ". a b"
+      "c d ."
+      ". e .";
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+
+    .img-1 {
+      grid-area: a;
+    }
+    .img-2 {
+      grid-area: b;
+    }
+    .img-3 {
+      grid-area: c;
+    }
+    .img-4 {
+      grid-area: d;
+    }
+    .img-5 {
+      grid-area: e;
+    }
+  }
+}
+
+// Desktop
+
+@include breakpoint(desktop) {
+  body .drone {
+    display: flex;
+    margin-top: 0%;
+    > div {
+      flex-basis: 0%;
+      flex-grow: 1;
+    }
+    &__content {
+      h1 {
+        font-size: 5rem;
+        width: 80%;
+        line-height: 80%;
+      }
+      p {
+        font-size: 1.125rem;
+        width: 80%;
+      }
+    }
+    &__gallery {
+      margin-top: -5rem;
+      z-index: 1;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+body .formControl {
+  background: #b2dd9e;
+  text-align: center;
+  padding-bottom: 3rem;
+  .title {
+    background: #9fc88c;
+    width: 90%;
+    padding: 0.69em;
+    padding-left: 2rem;
+    h1 {
+      font-size: 2.25rem;
+      margin: 0%;
+    }
+  }
+  @include breakpoint(desktop) {
+    display: grid;
+    grid-template-areas:
+      "title title"
+      "form contact";
+    .title {
+      grid-area: title;
+      width: 40%;
+    }
+    .form {
+      @include breakpoint(desktop) {
+        grid-area: form;
+      }
+    }
+  }
+}
+
+body .formControl .form {
+  width: 60%;
+  margin: 0% auto;
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+
+  label {
+    display: block;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  input {
+    font-size: 1rem;
+    outline: 1px solid thin;
+    padding: 0.7em;
+    width: 100%;
+    border: none;
+    margin-top: 0.7rem;
+    border: 2px solid transparent;
+  }
+  button {
+    font-size: 2.1rem;
+    padding: 0.3em;
+    color: #fff;
+    background: #000;
+    border: none;
+    margin-top: 0.5rem;
+    cursor: pointer;
+  }
+
+  > div {
+    &.error {
+      span {
+        display: flex;
+      }
+      input {
+        border-color: #ff6961;
+      }
+    }
+
+    position: relative;
+    span {
+      position: absolute;
+      color: #ff6961;
+      top: calc(100% + 3px);
+      left: 0%;
+      font-family: "montserrat";
+      font-size: 0.9rem;
+      display: none;
+    }
+  }
+}
+
+// Contact
+
+body .formControl .contact {
+  width: 60%;
+  margin: 0% auto;
+  margin-top: 2rem;
+  text-align: left;
+  ul {
+    display: grid;
+    gap: 0.5rem;
+    li {
+      a {
+        font-family: "montserrat", sans-serif;
+        color: #000;
+        font-size: 1.125rem;
+        display: inline-block;
+        padding: 0.5rem 0;
+        border-radius: 0.1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+  @include breakpoint(desktop) {
+    grid-area: contact;
+  }
+}

@@ -1,0 +1,148 @@
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1.25rem;
+  @include breakpoint(desktop) {
+    margin: 0 auto;
+    width: 80%;
+    margin-left: auto;
+  }
+}
+
+header nav {
+  > a {
+    font-size: 1.625rem;
+    color: #fff;
+    background: #000;
+    padding: 0.38em 0.46em;
+    display: inline-block;
+    letter-spacing: 0.01em;
+    @include breakpoint(desktop) {
+      font-size: 2.25rem;
+    }
+    span {
+      color: $PrimaryBlue;
+    }
+  }
+}
+
+.menu__container {
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  background: #363b4e;
+  height: 100vh;
+  width: 66%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 2.6rem;
+  transform: translateX(100%);
+  transition: 500ms ease-in-out transform;
+  z-index: 1;
+  @include breakpoint(desktop) {
+    position: static;
+    background: transparent;
+    transform: translate(0);
+    height: unset;
+    padding: 0;
+    transition: none !important;
+  }
+  .close-icon {
+    cursor: pointer;
+    display: flex;
+    padding: 0.3rem;
+    border-radius: 0.34rem;
+    transition: 300ms ease-in-out background-color;
+    @include breakpoint(desktop) {
+      display: none;
+    }
+    img {
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+
+  ul {
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+    @include breakpoint(desktop) {
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: 0;
+    }
+    .spy {
+      display: none;
+      transition: 300ms ease;
+    }
+    @include breakpoint(desktop) {
+      .spy {
+        display: flex;
+        position: absolute;
+        height: 3px;
+        width: 50px;
+        background-color: #fff;
+        bottom: 0%;
+        visibility: hidden;
+      }
+    }
+    li {
+      text-align: right;
+      a {
+        color: #fff;
+        font-size: 1.56rem;
+        transition: 300ms ease color;
+        letter-spacing: 0.06em;
+        position: relative;
+        &:hover {
+          &::after {
+            width: 70%;
+            @include breakpoint(desktop) {
+              width: 0 !important;
+            }
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          height: 3px;
+          width: 0%;
+          background-color: #fff;
+          top: calc(100%);
+          right: 0%;
+          transition: ease-in-out 300ms;
+          border-radius: 100vw;
+        }
+      }
+    }
+  }
+}
+
+.hamburgar {
+  cursor: pointer;
+  display: flex;
+  border-radius: 0.34rem;
+  transition: 300ms ease-in-out background-color;
+  @include breakpoint(desktop) {
+    display: none;
+  }
+  img {
+    width: 2.2rem;
+    pointer-events: none;
+  }
+  &:hover {
+    background-color: #dfdfdf42;
+  }
+}
+
+// Nav active
+
+header nav {
+  &.nav-active {
+    .menu__container {
+      transform: translateX(0);
+    }
+  }
+}

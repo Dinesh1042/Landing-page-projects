@@ -1,0 +1,83 @@
+body .stats {
+  margin: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  header {
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      @include breakpoint(medium) {
+        width: 40%;
+        display: inline-block;
+      }
+      @include breakpoint(large) {
+        font-size: 2rem;
+      }
+      span {
+        position: relative;
+        text-transform: capitalize;
+        &::after {
+          content: "";
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          background-color: $Orange;
+          bottom: 0%;
+          left: 0%;
+          filter: blur(1px);
+        }
+      }
+    }
+  }
+  max-width: $maxWidth;
+  margin: 0% auto;
+  padding: 1.5rem;
+}
+
+// Cards
+
+body .stats {
+  .cards {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .card {
+    padding: 1rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: 300ms ease background-color;
+    .text__content {
+      h1 {
+        font-size: 1.37rem;
+        margin-bottom: 0%;
+      }
+      p {
+        font-size: 1.125rem;
+        margin-top: 0.43rem;
+        margin-bottom: 0;
+      }
+    }
+    &:hover {
+      background-color: #ebebeb;
+    }
+    @include breakpoint(large) {
+      text-align: left;
+      padding: 1.5rem;
+    }
+  }
+}
+
+// Ctabtn
+body .stats {
+  .cta-btn {
+    button {
+      margin-top: 1.5rem;
+      text-transform: uppercase;
+      padding: 0.8em 1.5em;
+      @include breakpoint(medium) {
+        margin-top: 3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,244 @@
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 111;
+  background-color: #fff;
+  position: unset;
+  @include breakpoint(medium) {
+    max-width: 69rem;
+    margin: 0% auto;
+    padding: 2rem;
+    padding-top: 2rem !important;
+  }
+}
+
+header nav {
+  .menu__wrapper {
+    opacity: 0.5;
+    position: absolute;
+    background-color: $DarkBlue;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 0.45rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    z-index: 1;
+    clip-path: circle(0% at 100% 0%);
+    transition: 400ms ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    .menu {
+      border-bottom: 1px solid hsla(0, 0%, 92%, 0.376);
+      width: 100%;
+      padding-bottom: 1.5rem;
+      @include breakpoint(medium) {
+        padding: 0%;
+      }
+    }
+    ul {
+      text-align: center;
+      display: grid;
+      gap: 1rem;
+      li {
+        a {
+          font-size: 1.125rem;
+          color: #fff;
+          transition: 300ms ease-in-out color;
+          @include breakpoint(medium) {
+            color: $textColor;
+          }
+          &:hover {
+            color: $Orange;
+          }
+        }
+      }
+    }
+    .cta_btns {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      button {
+        margin-top: 0.8rem;
+        border: none;
+        font-size: 1rem;
+        padding: 0.7em 1em;
+        width: 100%;
+        border-radius: 0.25em;
+        color: #fff;
+        cursor: pointer;
+        &.signUp {
+          background-color: $Orange;
+          transition: 300ms ease-in-out opacity;
+          &:hover {
+            opacity: 0.75;
+          }
+        }
+        &.signIn {
+          background-color: transparent;
+        }
+      }
+    }
+    @include breakpoint(medium) {
+      transition: none !important;
+      position: static;
+      transform: translate(0);
+      background-color: transparent;
+      clip-path: circle(100% at 50% 50%);
+      box-shadow: none;
+      display: flex;
+      flex-direction: row;
+      opacity: 1;
+      max-width: none;
+      width: unset;
+      justify-content: space-between;
+      padding: 0;
+      .menu {
+        width: unset;
+        ul {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .cta_btns {
+        display: flex;
+        flex-direction: row;
+        width: unset;
+        margin-left: 2rem;
+        button {
+          width: unset;
+          margin-top: 0;
+          padding: 0.6em 1.5em;
+        }
+        .signIn {
+          color: $Orange;
+          border: 1px solid $Orange;
+        }
+        .signUp {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+  &.nav-active {
+    .menu__wrapper {
+      opacity: 1;
+      clip-path: circle(100% at 50% 50%);
+    }
+    .nav__overlay {
+      display: flex;
+      opacity: 1;
+    }
+  }
+}
+
+// Hamburgar
+
+header nav {
+  padding: 1.43rem;
+  padding-top: 1.6rem;
+  .hamburgar {
+    cursor: pointer;
+    height: 2.1rem;
+    width: 2.1rem;
+    display: grid;
+    place-items: center;
+    border-radius: 0.25rem;
+    transition: 200ms ease-in-out background-color;
+    .line {
+      height: 3px;
+      width: 1.7rem;
+      background: $DarkBlue;
+      position: relative;
+      pointer-events: none;
+      border-radius: 9px;
+      transition: 400ms ease;
+      &::after,
+      &::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: $DarkBlue;
+        pointer-events: none;
+        border-radius: 9px;
+        right: 0%;
+        transition: 400ms ease;
+      }
+      &::after {
+        top: -7px;
+        width: 60%;
+      }
+      &::before {
+        bottom: -7px;
+        width: 80%;
+      }
+    }
+    &:hover {
+      background-color: #ebebeb;
+    }
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+  // Nav active
+  &.nav-active {
+    .hamburgar {
+      .line {
+        transform: rotate(-45deg);
+        &::after {
+          transform: rotate(-90deg);
+          right: 7px;
+          width: 50%;
+        }
+        &::before {
+          transform: rotate(90deg);
+          width: 50%;
+          right: 7px;
+        }
+      }
+    }
+  }
+}
+
+// Logo
+
+header nav {
+  .logo {
+    display: flex;
+    img {
+      width: 8.75rem;
+      @include breakpoint(medium) {
+        width: 11.25rem;
+      }
+    }
+  }
+}
+
+// Overlay
+
+header .nav__overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#7d7d7ea1, transparent);
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  display: none;
+  opacity: 0;
+}
+
+@keyframes overlay_animation {
+  from {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+    display: flex;
+  }
+}

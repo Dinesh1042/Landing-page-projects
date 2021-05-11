@@ -1,0 +1,81 @@
+body .effortless_valiation {
+  margin: 1.8rem;
+  text-align: center;
+  margin-top: 4rem;
+  @include breakpoint(medium) {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: $maxWidth;
+    margin: 0% auto;
+    padding: 1.8rem;
+    align-items: center;
+    margin-top: 3rem;
+    > div {
+      flex-basis: 0%;
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+}
+
+// imafe
+
+body .effortless_valiation {
+  .img__wrapper {
+    padding: 1rem;
+    img {
+      width: 100%;
+      max-width: 520px;
+    }
+  }
+}
+
+// Text Content
+
+body .effortless_valiation {
+  .text__wrapper {
+    margin-top: 2rem;
+    header {
+      h1 {
+        margin-top: 0;
+        font-size: 1.6rem;
+        font-weight: 800;
+
+        @include breakpoint(large) {
+          font-size: 2.1rem;
+          margin-bottom: 0%;
+        }
+        span {
+          color: $Orange;
+        }
+      }
+      > span {
+        font-size: 0.875em;
+      }
+      @include breakpoint(large) {
+        width: 90%;
+      }
+    }
+    .text__content {
+      margin-top: 2rem;
+      display: grid;
+      gap: 2rem;
+      .text {
+        h3 {
+          font-size: 1.3rem;
+          margin: 0;
+          @include breakpoint(large) {
+            font-size: 1.5rem;
+          }
+        }
+        p {
+          margin: 0%;
+          margin-top: 0.5rem;
+          @include breakpoint(large) {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}

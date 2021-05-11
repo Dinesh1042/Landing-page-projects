@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Overpass", sans-serif;
+}
+
+p {
+  color: $textColor;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  color: $heading;
+}
+
+input,
+button {
+  font-family: "Overpass", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.btn-orange {
+  border: none;
+  font-size: 1rem;
+  padding: 0.7em 1em;
+  border-radius: 0.25em;
+  color: #fff;
+  cursor: pointer;
+  background-color: $Orange;
+  transition: 300ms ease-in-out opacity;
+  &:hover {
+    opacity: 0.75;
+  }
+}

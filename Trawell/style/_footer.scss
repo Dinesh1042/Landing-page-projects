@@ -1,0 +1,93 @@
+body footer {
+  margin: 0 2.5rem;
+
+  @include breakpoint(medium) {
+    max-width: $MaxWidth;
+    margin: 0% auto;
+    padding: 0 2.5rem;
+  }
+
+  .footerCont {
+    padding: 1rem 0;
+    border-top: 1px solid #a2a8af;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      text-align: left;
+      padding: 2rem 0;
+    }
+
+    .aboutCompany {
+      margin-top: 1rem;
+      @include breakpoint(medium) {
+        width: 70%;
+        margin-top: 0;
+      }
+      > a {
+        color: #fff;
+        font-size: 1.56rem;
+        font-weight: 800;
+        position: relative;
+        @include breakpoint(medium) {
+          font-size: 2rem;
+        }
+        &::after {
+          content: "";
+          height: 2px;
+          width: 70%;
+          background: #fff;
+          position: absolute;
+          bottom: 0%;
+          left: 0%;
+        }
+      }
+      p {
+        color: #a2a8af;
+        font-size: 1.125rem;
+      }
+    }
+    .links {
+      p {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fbd784;
+      }
+      ul {
+        display: grid;
+        gap: 1rem;
+        li {
+          a {
+            color: #a2a8af;
+            font-size: 1rem;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      &.blog {
+        margin-top: 2.5rem;
+      }
+      &.trawell {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      @include breakpoint(medium) {
+        &.blog,
+        p {
+          margin-top: 0;
+        }
+
+        &.trawell {
+          margin: 0;
+        }
+      }
+    }
+    .copyright {
+      color: #74777a;
+      font-size: 0.8rem;
+    }
+  }
+}

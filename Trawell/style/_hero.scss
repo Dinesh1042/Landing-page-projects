@@ -1,0 +1,94 @@
+body .heroBackground {
+  min-height: 107vh;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-image: url("../assets/Hero_img.png");
+  background-size: cover;
+  background-position: 30% center;
+  @include breakpoint(large) {
+    background-position: bottom;
+    min-height: 145vh;
+    .scrollBox {
+      bottom: 40% !important;
+    }
+  }
+  .scrollBox {
+    height: 3rem;
+    width: 1.87rem;
+    border: 2px solid #fff;
+    border-radius: 9rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20%;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 0.3rem;
+      width: 0.3rem;
+      background-color: #fff;
+      border-radius: 1rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(50%);
+      top: 65%;
+      animation: scrollAnimation 1000ms alternate-reverse infinite;
+    }
+  }
+}
+
+// Hero text
+
+body .hero {
+  margin: 2.5rem;
+  text-align: center;
+  min-height: 70vh;
+  .hero__text {
+    margin-top: 7rem;
+    display: flex;
+    // background-color: #fbd784;
+    align-items: flex-end;
+    justify-content: flex-end;
+    h1 {
+      color: #fff;
+      margin-top: 0%;
+      position: relative;
+      font-size: 2.1rem;
+      @include breakpoint(small) {
+        font-size: 2.8rem;
+      }
+      @include breakpoint(large) {
+        font-size: 4rem;
+        width: 60%;
+        text-align: left;
+      }
+    }
+    span {
+      color: #fbd784;
+      letter-spacing: 0.3rem;
+      position: absolute;
+      font-size: 0.38em;
+
+      bottom: 95%;
+      &::before {
+        content: "----";
+      }
+    }
+  }
+}
+
+@keyframes scrollAnimation {
+  0% {
+    top: 15%;
+    height: 0.3rem;
+  }
+  50% {
+    height: 0.6rem;
+  }
+  70% {
+    height: 0.3rem;
+  }
+}

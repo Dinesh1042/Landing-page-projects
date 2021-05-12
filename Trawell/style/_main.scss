@@ -1,0 +1,132 @@
+body main {
+  margin: 2.8rem;
+  display: grid;
+  gap: 4rem;
+  transform: translateZ(10px);
+  .wrapper {
+    text-align: center;
+    @include breakpoint(medium) {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      > div {
+        flex-basis: 0;
+        flex-grow: 1;
+        text-align: left;
+      }
+      max-width: $MaxWidth;
+      margin: 0 auto;
+      padding: 1.5rem;
+      &.wrapper2 {
+        flex-direction: row;
+      }
+    }
+  }
+  .imgCont {
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+      max-width: 28rem;
+    }
+  }
+  .textCont {
+    margin-top: 4.5rem;
+    @include breakpoint(medium) {
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 1.5rem;
+      position: relative;
+      font-weight: 600;
+      @include breakpoint(large) {
+        font-size: 2.3rem;
+        width: 70%;
+      }
+      @include breakpoint(medium) {
+        width: 70%;
+      }
+      span {
+        color: #fbd784;
+        letter-spacing: 0.2rem;
+        position: absolute;
+        font-size: 0.38em;
+        bottom: 100%;
+        font-weight: 200;
+        text-transform: uppercase;
+        text-align: center;
+        left: 50%;
+        width: 100%;
+        transform: translateX(-50%);
+        @include breakpoint(medium) {
+          left: 0% !important;
+          transform: translateX(0%) !important;
+          width: unset;
+        }
+      }
+    }
+    p {
+      font-size: 1.125rem;
+      line-height: 1.5;
+      color: #a2a8af;
+      @include breakpoint(medium) {
+        width: 70%;
+      }
+    }
+  }
+  .wrapper {
+    a {
+      color: #fbd784;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+      margin-top: 2rem;
+      transition: 300ms ease opacity;
+      &:hover {
+        opacity: 0.75;
+        @include breakpoint(medium) {
+          img {
+            margin-left: 2rem;
+          }
+        }
+      }
+      @include breakpoint(medium) {
+        justify-content: flex-start;
+        width: 100%;
+      }
+      img {
+        margin-left: 1rem;
+        transition: 300ms ease margin;
+      }
+    }
+  }
+}
+
+// Count number
+
+body main {
+  .wrapper {
+    .textCont {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @include breakpoint(medium) {
+        align-items: flex-start;
+      }
+      h1 {
+        position: relative;
+        &::before {
+          content: attr(data-count);
+          font-weight: 700;
+          position: absolute;
+          font-size: 7.5rem;
+          opacity: 0.1;
+          left: -5%;
+          top: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

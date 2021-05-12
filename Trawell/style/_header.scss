@@ -1,0 +1,164 @@
+body header {
+  z-index: 100;
+  > a {
+    color: #fff;
+    font-size: 1.56rem;
+    font-weight: 800;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 2px;
+      width: 70%;
+      background: #fff;
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+    }
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.8rem;
+  @include breakpoint(medium) {
+    max-width: $MaxWidth;
+    margin: 0% auto;
+    padding: 1.8rem;
+    padding-top: 2rem;
+    > a {
+      font-size: 2rem;
+    }
+  }
+  nav {
+    position: absolute;
+    left: 0%;
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+    padding: 2rem;
+    text-align: center;
+    z-index: 1;
+    border-radius: 0.35rem;
+    width: 80%;
+    max-width: 400px;
+    display: none;
+    animation: 400ms ease navAnimation;
+    opacity: 1;
+    ul {
+      display: grid;
+      gap: 2rem;
+      li a {
+        color: #a2a8af;
+        user-select: none;
+        transition: 300ms ease color;
+        &:hover {
+          color: #354147;
+        }
+      }
+    }
+    @include breakpoint(medium) {
+      display: unset;
+      position: static;
+      transform: translateX(0%);
+      transition: none;
+      background-color: transparent;
+      padding: 0;
+      width: unset;
+      ul {
+        grid-template-columns: repeat(3, 1fr);
+        li a {
+          color: #fff;
+        }
+      }
+    }
+  }
+  &.nav-active {
+    nav {
+      display: unset;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      @include breakpoint(medium) {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// Hamburgar
+
+body header {
+  .hamburgar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    height: 1.8rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 300ms ease background-color;
+    z-index: 10;
+    .line {
+      height: 3px;
+      width: 28px;
+      background: #fff;
+      position: relative;
+      pointer-events: none;
+      border-radius: 9px;
+      transition: 300ms ease-in-out;
+      transition: 300ms ease-in-out;
+      &::before,
+      &::after {
+        content: "";
+        height: 100%;
+        margin-right: auto;
+        width: 100%;
+        position: absolute;
+        background: #fff;
+        border-radius: 9px;
+        transition: 300ms ease-in-out;
+        right: 0;
+      }
+      &::before {
+        bottom: -7px;
+        width: 70%;
+      }
+      &::after {
+        width: 50%;
+        top: -7px;
+      }
+    }
+    &:hover {
+      background-color: #f4f4f425;
+    }
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+  &.nav-active {
+    .hamburgar {
+      .line {
+        transform: rotate(-45deg);
+        &::after {
+          transform: rotate(-90deg);
+          left: 7px;
+          width: 50%;
+        }
+        &::before {
+          transform: rotate(90deg);
+          left: 7px;
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes navAnimation {
+  from {
+    top: 20%;
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}

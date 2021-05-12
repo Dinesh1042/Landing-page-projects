@@ -1,0 +1,29 @@
+$Bebas: "Bebas Neue", cursive;
+$Montserrat: "Montserrat", sans-serif;
+$MaxWidth: 75em;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $Montserrat;
+  color: #fff;
+  background: #0b1d26;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0%;
+}

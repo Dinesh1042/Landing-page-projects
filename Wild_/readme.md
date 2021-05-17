@@ -1,5 +1,5 @@
-# **`Wild_`**
+# **Wild_**
 
-### **_`Screenshot - Wild_`_**
+### ***_Screenshot - Wild_***
 
-![Wild_](./screenshot/Wild_.png)
+![Wild_](https://github.com/Dinesh1042/Landing-page-projects/blob/main/Wild_/screenshot/WIld_.png?raw=true)

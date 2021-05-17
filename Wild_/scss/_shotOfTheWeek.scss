@@ -1,0 +1,125 @@
+body .shotOfTheWeek {
+  margin: 1.8rem;
+  margin-top: 4rem;
+  .textContent {
+    h1 {
+      font-size: 2rem;
+      font-size: clamp(2rem, 12vw, 4rem);
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #4e4e4e;
+      margin-bottom: 0%;
+      position: relative;
+      @include wiggle;
+      @include breakpoint(medium) {
+        margin-top: 0%;
+      }
+    }
+    > p {
+      margin-top: 0%;
+      color: $Text;
+    }
+    .profile {
+      display: flex;
+      p {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+        color: #9c9c9c;
+      }
+    }
+    @include breakpoint(medium) {
+      align-self: center;
+    }
+  }
+  @include breakpoint(medium) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: $MaxWidth;
+    margin: 0% auto;
+    padding: 1.8rem;
+    padding-top: 5rem;
+    padding-top: clamp(3rem, 5vw, 6rem);
+  }
+}
+
+// Gallery
+
+body .shotOfTheWeek .galleryWrapper {
+  margin-top: 1rem;
+
+  > img {
+    max-width: 29rem;
+    margin: 0 auto;
+    height: 100%;
+    @include breakpoint(small) {
+      grid-area: b2large;
+    }
+    @include breakpoint(medium) {
+      grid-area: large;
+    }
+  }
+
+  @include breakpoint(small) {
+    display: grid;
+    grid-template-areas:
+      "b2large b2small"
+      "b2large b2link";
+  }
+  .gridgallery img {
+    max-width: 13rem;
+    width: 100%;
+    margin: 0% auto;
+  }
+  > img,
+  .gridgallery img {
+    width: 100%;
+    transition: 400ms ease transform;
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+  display: grid;
+  > .gridgallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include breakpoint(small) {
+      grid-area: b2small;
+    }
+    @include breakpoint(medium) {
+      grid-area: small;
+    }
+  }
+
+  a {
+    color: $Links;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms ease opacity;
+    @include breakpoint(small) {
+      grid-area: b2link;
+      justify-self: flex-end;
+    }
+    @include breakpoint(medium) {
+      grid-area: link;
+      justify-self: flex-end;
+    }
+    img {
+      width: 1.3rem;
+      margin-left: 1rem;
+    }
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  @include breakpoint(medium) {
+    display: grid;
+    grid-template-areas:
+      "large small"
+      "large link";
+  }
+}

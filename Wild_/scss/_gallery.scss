@@ -1,0 +1,73 @@
+body .gallerySection {
+  margin-top: 3rem;
+  .title {
+    h1 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      color: $Heading;
+      position: relative;
+      @include wiggle(35%);
+    }
+    @include breakpoint(medium) {
+      max-width: $MaxWidth;
+      margin: 0% auto;
+      padding: 1.8rem;
+      h1 {
+        text-align: left;
+        @include wiggle(0);
+      }
+    }
+  }
+}
+
+// Gallery
+
+body .gallerySection {
+  .gallery {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-color: transparent;
+    scrollbar-width: 0;
+    scrollbar-color: transparent transparent;
+    &::-webkit-scrollbar {
+      appearance: none;
+    }
+
+    > div img {
+      width: 12rem;
+      height: 12rem;
+      object-fit: cover;
+      transition: 300ms ease transform;
+      &:hover {
+        transform: scale(1.01);
+      }
+      @include breakpoint(medium) {
+        height: 14rem;
+        width: 14rem;
+      }
+    }
+    > div:nth-child(1) {
+      margin-left: 3rem;
+    }
+    > div:last-child {
+      margin-right: 3rem;
+    }
+
+    > div {
+      margin-right: 1.5rem;
+      .text {
+        p {
+          margin: 0%;
+          color: $Text;
+          &:nth-child(2) {
+            opacity: 0.7;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+  margin-bottom: 5rem;
+}

@@ -1,0 +1,80 @@
+body footer {
+  text-align: center;
+  margin: 1.8rem;
+  margin-top: 5rem;
+
+  .link1 {
+    margin-top: 4rem;
+    @include breakpoint(medium) {
+      margin-top: 0%;
+    }
+  }
+
+  .links {
+    margin-bottom: 2rem;
+    @include breakpoint(medium) {
+      margin-bottom: 0%;
+      text-align: left;
+      justify-self: flex-end;
+    }
+    p {
+      font-size: 1.125rem;
+      font-weight: bold;
+      color: $FooterHeading;
+    }
+    ul {
+      display: grid;
+      gap: 0.5rem;
+      li a {
+        color: $Links;
+        text-decoration: none;
+        font-size: 1rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    display: grid;
+    grid-template-columns: 3fr repeat(3, 1fr);
+    .logo {
+      align-self: center;
+    }
+    max-width: $MaxWidth;
+    margin: 0% auto;
+    padding: 1.8rem;
+    margin-top: 3rem;
+  }
+}
+
+body .copyrightSection {
+  background: #e8edef;
+  width: 100%;
+  display: flex;
+  color: $Links;
+  .copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    max-width: $MaxWidth;
+    margin: 0% auto;
+  }
+  .social {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+      li a {
+        font-size: 1.325rem;
+
+        i {
+          color: $Links;
+        }
+      }
+    }
+  }
+}

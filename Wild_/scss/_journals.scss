@@ -1,0 +1,102 @@
+body .journal {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  padding-top: 8rem;
+  .journalBg {
+    position: absolute;
+    background: url(../../asset/journal.png);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0%;
+    left: 0%;
+  }
+}
+
+body .journal {
+  header {
+    h1 {
+      font-size: clamp(1.8rem, 12vw, 2.5rem);
+      text-transform: uppercase;
+      width: 80%;
+      margin: auto;
+      @include breakpoint(medium) {
+        margin: 0%;
+        width: 50%;
+      }
+    }
+    p {
+      color: hsla(0, 0%, 91%, 1);
+    }
+    @include breakpoint(medium) {
+      text-align: left;
+      align-self: flex-start;
+      padding: 0 1.8rem;
+      margin: unset;
+    }
+    max-width: 50em;
+    margin: 0% auto;
+  }
+  .testimonial {
+    gap: 1rem;
+    .card {
+      .title {
+        font-size: 1.3rem;
+        font-weight: normal;
+        text-decoration: underline;
+      }
+      p {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #f4f4f4;
+        line-height: 1.5;
+      }
+      .user {
+        img {
+          border-radius: 50%;
+        }
+        p {
+          font-size: 1rem;
+          font-weight: normal;
+          opacity: 0.75;
+          margin-top: 0%;
+        }
+        @include breakpoint(medium) {
+          display: flex;
+          align-items: center;
+
+          p {
+            margin: 0%;
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+    @include breakpoint(medium) {
+      max-width: $MaxWidth;
+      margin: 0% auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1.8rem;
+      .card {
+        width: 80%;
+      }
+    }
+    @include breakpoint(medium) {
+      text-align: left;
+    }
+  }
+  @include breakpoint(medium) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    .wrapper {
+      margin: 0% auto;
+    }
+  }
+}

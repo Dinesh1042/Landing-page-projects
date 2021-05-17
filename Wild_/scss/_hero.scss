@@ -1,0 +1,47 @@
+body .heroBg {
+  height: 120vh;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  z-index: -5;
+  background: url(../../asset/hero_bg.png);
+  background-size: cover;
+}
+
+body .hero {
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    text-align: center;
+    color: #fff;
+    p {
+      font-size: 1.125rem;
+      font-weight: lighter;
+      letter-spacing: 0.2em;
+      margin: 0%;
+    }
+    h1 {
+      margin: 0%;
+      font-size: 3rem;
+      font-size: clamp(3rem, 12vw, 4.5rem);
+    }
+    button {
+      border: 2px solid #fff;
+      border-radius: 0.3rem;
+      background-color: transparent;
+      color: #fff;
+      padding: 0.8em;
+      font-size: 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: 300ms ease;
+      &:hover {
+        background-color: #fff;
+        color: #5f6368;
+      }
+    }
+  }
+}

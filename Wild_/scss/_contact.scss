@@ -1,0 +1,136 @@
+body .contact {
+  margin: 1.8rem;
+  text-align: center;
+  margin-top: 3rem;
+  > img {
+    width: 100%;
+    object-fit: cover;
+    @include breakpoint(medium) {
+      grid-area: image;
+    }
+  }
+  header {
+    h1 {
+      font-size: clamp(2.5rem, 12vw, 3rem);
+      color: $Heading;
+      @include wiggle(30%);
+      position: relative;
+
+      @include breakpoint(medium) {
+        @include wiggle(0%);
+      }
+    }
+    @include breakpoint(medium) {
+      grid-area: header;
+      justify-self: flex-start;
+    }
+  }
+  .getInTouch {
+    h1 {
+      color: $Heading;
+      font-size: 1.8rem;
+      margin-bottom: 0%;
+    }
+    h1 + p {
+      margin: 0%;
+      margin-bottom: 2rem;
+      font-size: 1.125rem;
+      color: $Text;
+      margin-top: 0.5rem;
+    }
+    .videoMaker {
+      margin-top: 2rem;
+      color: #bfd4e8;
+    }
+    .photographers {
+      color: #a8c1f3;
+    }
+    .designer {
+      color: #ffd2c3;
+    }
+    @include breakpoint(medium) {
+      grid-area: getintouch;
+      justify-self: flex-start;
+    }
+  }
+  > img {
+    margin-top: 1.5rem;
+    max-width: 360px;
+    height: 100%;
+    object-fit: cover;
+    @include breakpoint(medium) {
+      margin-top: 0%;
+    }
+  }
+  .form {
+    margin-top: 2rem;
+    > * {
+      display: block;
+      width: 100%;
+      border: 1px solid $Text;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      padding: 0.5em;
+      font-family: inherit;
+      &:focus {
+        outline-color: $Links;
+      }
+    }
+    input {
+      margin-bottom: 1rem;
+    }
+    textarea {
+      resize: none;
+      margin-bottom: 1rem;
+    }
+    button {
+      background: $Links;
+      border: none;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    @include breakpoint(small) {
+      display: grid;
+      grid-template-areas:
+        "name mail"
+        "message message"
+        "btn btn";
+      gap: 1rem;
+      max-width: 80%;
+      margin: 0% auto;
+      margin-top: 2rem;
+
+      button {
+        grid-area: btn;
+        width: unset;
+        align-self: flex-start;
+        justify-self: flex-start;
+        padding: 0.5em 1em;
+      }
+      textarea {
+        grid-area: message;
+      }
+    }
+    @include breakpoint(medium) {
+      display: unset;
+      grid-area: form;
+      max-width: unset;
+      margin: unset;
+      button {
+        justify-self: center;
+        width: 100%;
+      }
+    }
+  }
+  @include breakpoint(medium) {
+    display: grid;
+    grid-template-areas: "header header header" "getintouch image form";
+    max-width: $MaxWidth;
+    margin: 0% auto;
+    gap: 1rem;
+    padding: 1.8rem;
+  }
+}

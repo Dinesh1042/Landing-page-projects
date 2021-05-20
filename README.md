@@ -1,13 +1,13 @@
 # Landing-page-projects
 This repository only contains of landing page of the websites
 
-| S.No  | Project Name |
-| ---   | -----------  |
-|  1    | [Drone Landing Page](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Drone%20Landing%20Page) |  
-|  2    | [Productly Landing Page](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Productly)  |
-|  3    | [Trawell Landing Page](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Trawell)  |
-|  4    | [Wild_](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Wild_)   |
-|  5    | [MedCare](https://github.com/Dinesh1042/Landing-page-projects/tree/main/MedCare)  |
+| S.No| Project Name |
+| --- | -----------  |
+|  1  | [Drone Landing Page](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Drone%20Landing%20Page) |  
+|  2  | [Productly Landing Page](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Productly)  |
+|  3  | [Trawell Landing Page](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Trawell)  |
+|  4  | [Wild_](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Wild_)   |
+|  5  | [MedCare](https://github.com/Dinesh1042/Landing-page-projects/tree/main/MedCare)  |
 
 ### These projects are Builded with:
 

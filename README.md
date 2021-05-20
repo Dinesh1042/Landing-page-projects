@@ -7,9 +7,9 @@ This repository only contains of landing page of the websites
 |  2    | [Productly Landing Page](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Productly)  |
 |  3    | [Trawell Landing Page](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Trawell)  |
 |  4    | [Wild_](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Wild_)   |
+|  5    | [MedCare](https://github.com/Dinesh1042/Landing-page-projects/tree/main/MedCare)  |
 
-
-### These projects are Builted with:
+### These projects are Builded with:
 
 - Semantic HTML5 markup
 - CSS custom properties

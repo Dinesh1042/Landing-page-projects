@@ -1,0 +1,188 @@
+body .curousel {
+  text-align: center;
+  color: #fff;
+  margin: 1.8rem;
+  margin-top: 4rem;
+
+  @include breakpoint(medium) {
+    margin-top: 5rem;
+  }
+
+  .slides {
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    max-width: 65.75rem;
+    margin: 0% auto;
+
+    .slide {
+      padding: 3rem;
+      border-radius: 0.6rem;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      min-width: 100%;
+      margin-right: -100%;
+      display: none;
+      transition: 1000ms ease transform;
+
+      header {
+        h1 {
+          color: #fff;
+          margin-top: 0%;
+          @include underline;
+          &::after {
+            background-color: #f4f4f4;
+          }
+        }
+      }
+      .customer {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        @include breakpoint(medium) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin-top: 3rem;
+        }
+
+        .profile {
+          margin-top: 1rem;
+          display: flex;
+          align-items: center;
+
+          @include breakpoint(medium) {
+            // order: 1;
+            align-self: center;
+            justify-self: center;
+            margin-top: 0%;
+          }
+
+          .info {
+            margin-left: 0.7rem;
+            @include breakpoint(medium) {
+              margin-left: 2rem;
+            }
+            h3,
+            p {
+              margin: 0%;
+              text-align: left;
+            }
+
+            p {
+              color: #f4f4f4a4;
+              font-size: 0.8rem;
+            }
+            h3 {
+              font-size: 1.2rem;
+              color: #f4f4f4;
+              @include breakpoint(medium) {
+                font-size: 1.5rem;
+              }
+            }
+          }
+
+          img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            object-fit: cover;
+            @include breakpoint(medium) {
+              width: 8rem;
+              height: 8rem;
+              width: clamp(5.3rem, 12vw, 8.3rem);
+              height: clamp(5.3rem, 12vw, 8.3rem);
+            }
+          }
+        }
+        .about {
+          p {
+            color: #f4f4f4;
+            margin-top: 1rem;
+            @include breakpoint(medium) {
+              text-align: left;
+            }
+          }
+        }
+      }
+      &.slide1 {
+        background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
+      }
+      &.slide2 {
+        background-color: #ee8c68;
+        background-image: linear-gradient(315deg, #ee8c68 0%, #eb6b9d 74%);
+      }
+      &.slide3 {
+        background-color: #63a4ff;
+        background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+      }
+      &.slide4 {
+        background-color: #ee8c68;
+      }
+      &::after {
+        content: url(../../asset/dot.png);
+        position: absolute;
+        right: -5%;
+        top: -10%;
+      }
+      &::before {
+        content: url(../../asset/dot.png);
+        position: absolute;
+        left: -5%;
+        bottom: -10%;
+      }
+      &.active {
+        display: block;
+        z-index: 5;
+      }
+      &.prev {
+        display: block;
+        transform: translate(-100%);
+        z-index: 4;
+      }
+      &.next {
+        display: block;
+        transform: translate(100%);
+      }
+    }
+  }
+  .navigation__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    button {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      display: flex;
+      cursor: pointer;
+      img {
+        user-select: none;
+        pointer-events: none;
+      }
+    }
+    .indicators {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin: 0% 2rem;
+      .dot {
+        height: 10px;
+        width: 10px;
+        background-color: $IndicatorsColor;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0.3;
+        transition: 300ms ease;
+        &.active {
+          opacity: 1;
+          width: 1.5rem;
+          border-radius: 9rem;
+        }
+      }
+    }
+  }
+}

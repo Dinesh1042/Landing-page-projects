@@ -1,0 +1,76 @@
+body .healthcare {
+  margin: 1.8rem;
+  margin-top: 4rem;
+  text-align: center;
+
+  @include breakpoint(medium) {
+    display: flex;
+    max-width: $MaxWidth;
+    margin: 0% auto;
+    margin-top: 4rem;
+    padding: 1.8rem;
+    > div {
+      flex-basis: 0%;
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+
+  &__img {
+    padding: 1.5rem;
+    img {
+      width: 100%;
+      max-width: 550px;
+      margin: 0% auto;
+    }
+  }
+  &__text {
+    margin-top: 2rem;
+    @include breakpoint(medium) {
+      margin-left: 2rem;
+      align-self: center;
+    }
+    @include breakpoint(large) {
+      margin-left: 4rem;
+      align-self: center;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin: 0% auto;
+      @include underline;
+
+      @include breakpoint(medium) {
+        font-size: 1.9rem;
+        width: 80%;
+        margin-left: 0%;
+        &::after {
+          left: 15%;
+        }
+      }
+      @include breakpoint(large) {
+        font-size: 2.3rem;
+      }
+    }
+    p {
+      margin-top: 2rem;
+
+      @include breakpoint(small) {
+        width: 70%;
+        margin: 0% auto;
+        margin-top: 2rem;
+      }
+      @include breakpoint(medium) {
+        width: unset;
+        margin: unset;
+        margin-top: 2rem;
+      }
+    }
+    .cta__btn {
+      margin-top: 3rem;
+      a {
+        @include button(true);
+        display: inline-block;
+      }
+    }
+  }
+}

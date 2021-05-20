@@ -1,0 +1,137 @@
+body > header {
+  margin: 1.8rem;
+
+  @include breakpoint(medium) {
+    margin: 2rem;
+  }
+  nav {
+    @include breakpoint(medium) {
+      max-width: $MaxWidth;
+      margin: 0% auto;
+      padding: 0 1rem;
+    }
+
+    > a {
+      color: $PrimaryBlue;
+      font-size: 1.5rem;
+      font-weight: bold;
+      z-index: 2;
+      position: relative;
+      @include breakpoint(small) {
+        font-size: 2rem;
+      }
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .menu {
+      position: absolute;
+    }
+  }
+}
+
+// Hamburgar
+
+body header {
+  nav .hamburgar {
+    @include breakpoint(medium) {
+      display: none;
+    }
+    cursor: pointer;
+    height: 1.8rem;
+    width: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+    transition: 300ms ease background-color;
+    .line {
+      height: 0.2rem;
+      width: 1.5rem;
+      background: $ParaColor;
+      position: relative;
+      pointer-events: none;
+      margin-top: calc(0.6rem);
+      transition: 300ms ease transform;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transition: 300ms ease transform;
+        background: $ParaColor;
+        top: -0.55rem;
+      }
+    }
+    &:hover {
+      background-color: rgba(100, 100, 100, 0.1);
+    }
+  }
+}
+
+// Menu
+
+body header nav {
+  .menu {
+    background-color: #fff;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 80%;
+    padding: 1.5rem;
+    border-radius: 0.4rem;
+    top: 0;
+    opacity: 0;
+    transition: 500ms ease;
+    max-width: 25rem;
+
+    ul {
+      display: grid;
+      gap: 1rem;
+      li a {
+        color: $ParaColor;
+        font-size: 1rem;
+        transition: 300ms ease color;
+        &:hover {
+          color: $PrimaryBlue;
+        }
+      }
+    }
+    @include breakpoint(medium) {
+      position: static;
+      transform: unset;
+      opacity: 1;
+      left: 0%;
+      background-color: transparent;
+      box-shadow: none;
+      width: unset;
+      padding: 0%;
+      border-radius: 0;
+      max-width: none;
+      transition: none;
+      ul {
+        display: flex;
+        gap: 2rem;
+        margin: 0%;
+      }
+    }
+  }
+  &.nav-active {
+    .hamburgar {
+      .line {
+        transform: rotate(-45deg);
+        bottom: 0.28rem;
+        &::after {
+          transform: rotate(90deg);
+          top: 0rem;
+        }
+      }
+    }
+
+    .menu {
+      transform: translate(-50%, 40%);
+      opacity: 1;
+    }
+  }
+}

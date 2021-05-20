@@ -1,0 +1,87 @@
+body .downloadapp {
+  margin: 1.8rem;
+  margin-top: 4rem;
+  text-align: center;
+  @include breakpoint(medium) {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: $MaxWidth;
+    margin: 0% auto;
+    margin-top: 4rem;
+    padding: 1.8rem;
+    > div {
+      flex-basis: 0;
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+  &__img {
+    padding: 1.5rem;
+    img {
+      width: 100%;
+      max-width: 650px;
+      margin: 0% auto;
+    }
+  }
+
+  &__text {
+    margin-top: 1.4rem;
+    @include breakpoint(medium) {
+      align-self: center;
+    }
+    h1 {
+      width: 60%;
+      margin: 0 auto;
+      @include underline;
+      position: relative;
+
+      @include breakpoint(medium) {
+        margin-left: 0%;
+        width: 83%;
+        font-size: 1.9rem;
+        &::after {
+          left: 15%;
+        }
+      }
+      @include breakpoint(large) {
+        font-size: 2.3rem;
+      }
+    }
+    p {
+      margin-top: 2rem;
+      @include breakpoint(small) {
+        width: 70%;
+        margin: 0% auto;
+        margin-top: 2rem;
+      }
+      @include breakpoint(medium) {
+        margin-left: 0%;
+        margin-right: 2rem;
+      }
+    }
+  }
+  .cta__btn {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(medium) {
+      justify-content: flex-start;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include button(true);
+      img {
+        margin-left: 0.5rem;
+        transition: 300ms ease filter;
+      }
+      &:hover {
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+body .service {
+  margin: 1.8rem;
+  margin-top: 4rem;
+  text-align: center;
+  position: relative;
+  @include breakpoint(medium) {
+    max-width: $MaxWidth;
+    margin: 0% auto;
+    margin-top: 4rem;
+    padding: 1.8rem;
+  }
+  &__header {
+    h1 {
+      font-size: 1.6rem;
+      @include underline;
+      position: relative;
+      @include breakpoint(medium) {
+        font-size: 1.9rem;
+      }
+      @include breakpoint(large) {
+        font-size: 2.3rem;
+      }
+    }
+    p {
+      margin-top: 2rem;
+      @include breakpoint(small) {
+        width: 70%;
+        margin: 0% auto;
+      }
+    }
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+    cursor: pointer;
+
+    @include breakpoint(medium) {
+      margin-top: 4rem;
+      gap: 2rem;
+    }
+    .card {
+      background-color: #fff;
+      padding: 1.8rem;
+      border-radius: 0.5rem;
+      transition: 300ms ease background-color;
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      img {
+        width: clamp(3rem, 12vw, 4rem);
+        transition: 300ms ease transform;
+        height: 6.25rem;
+      }
+      &:hover {
+        background-color: hsla(215, 91%, 62%, 0.05);
+        img {
+          transform: scale(1.08);
+        }
+      }
+    }
+  }
+  .cta__btn {
+    margin-top: 3rem;
+    a {
+      @include button(true);
+    }
+  }
+}

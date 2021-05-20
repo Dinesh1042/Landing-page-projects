@@ -1,0 +1,70 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish", sans-serif;
+  color: $ParaColor;
+  background: $MainBackground;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  color: rgb(24, 24, 24);
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: $ParaColor;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0%;
+}
+
+@mixin button($isTransparentBg) {
+  color: #fff;
+  background-color: hsla(215, 91%, 62%, 1);
+  font-size: 1rem;
+  border-radius: 0.2em;
+  padding: 0.8em 1em;
+  transition: 300ms ease;
+  transition-property: color, background-color;
+  &:hover {
+    background-color: $LightBlue;
+  }
+  @if $isTransparentBg {
+    border: 1px solid $PrimaryBlue;
+    color: $PrimaryBlue;
+    background-color: transparent;
+    &:hover {
+      background-color: $PrimaryBlue;
+      color: #fff;
+    }
+  }
+}
+
+@mixin underline() {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $PrimaryBlue;
+    bottom: calc(0% - 10px);
+    border-radius: 1rem;
+  }
+}

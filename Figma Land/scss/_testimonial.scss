@@ -1,0 +1,85 @@
+.testmonial {
+  margin: 2rem;
+  margin-top: 5rem;
+  text-align: center;
+  @include breakpoint(medium) {
+    max-width: $maxwidth;
+    padding: 2rem;
+    margin: 0% auto;
+  }
+}
+
+.testmonial .container {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.35rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-top: 2rem;
+}
+
+.testmonial .container .grid__testmonial {
+  .testimonial__image {
+    position: relative;
+    &::after {
+      content: url(../../asset/quote.svg);
+      position: absolute;
+      background-color: $primary;
+      display: flex;
+      top: 0%;
+      padding: 1.2rem;
+      border-radius: 100%;
+      right: 0%;
+      top: 30%;
+      transform: translateX(50%);
+      aspect-ratio: 1/1;
+    }
+    &::before {
+      content: url(/asset/dot.png);
+      position: absolute;
+      display: flex;
+      left: 0%;
+      bottom: 0%;
+    }
+    img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+  }
+  @include breakpoint(medium) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.container .grid__testmonial {
+  .quote {
+    margin: 0.5rem;
+    text-align: left;
+    @include breakpoint(medium) {
+      padding: 2rem;
+    }
+    footer {
+      display: flex;
+
+      &::before {
+        content: "";
+        display: flex;
+        height: 0.2rem;
+        width: 2rem;
+        background: linear-gradient(to right, #e637b8, #43b6ff);
+        margin: 0.8rem;
+      }
+      .customer {
+        p {
+          margin: 0%;
+        }
+        span {
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          color: rgb(129, 129, 129);
+        }
+      }
+    }
+  }
+}

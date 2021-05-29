@@ -1,0 +1,29 @@
+.partners {
+  margin: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+  @include breakpoint(medium) {
+    max-width: $maxwidth;
+    margin: 0% auto;
+    margin-top: 0rem;
+    padding: 2rem;
+  }
+  .grid-container {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    img {
+      width: 100%;
+    }
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      color: $paraColor;
+    }
+  }
+}

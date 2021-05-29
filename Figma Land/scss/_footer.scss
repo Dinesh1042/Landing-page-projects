@@ -1,0 +1,41 @@
+.footer__wrapper {
+  background: $footerBg;
+  text-align: center;
+  padding: 2rem;
+  .nav__links {
+    max-width: $maxwidth;
+    margin: 0% auto;
+    margin-top: 4rem;
+  }
+  .link {
+    p {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    ul {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    a {
+      color: #f4f4f4af;
+      font-size: 1rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    margin-bottom: 2rem;
+  }
+  .copyright {
+    font-size: 0.9rem;
+  }
+
+  @include breakpoint(medium) {
+    text-align: left;
+    .nav__links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

@@ -1,0 +1,122 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: $paraColor;
+  line-height: 1.5;
+  background-color: #f4f4f4;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Overpass", sans-serif;
+  color: $headingColor;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0%;
+  @include breakpoint(small) {
+    font-size: 2.2rem;
+  }
+  @include breakpoint(medium) {
+    font-size: 2.5rem;
+  }
+}
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0%;
+  @include breakpoint(small) {
+    font-size: 3rem;
+  }
+  @include breakpoint(large) {
+    font-size: 3.5rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+p,
+a {
+  font-size: 1.125rem;
+}
+
+@mixin button($isTransparent) {
+  padding: 0.7em 1.5em;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 0.25em;
+  transition: 300ms ease opacity;
+  background-color: $primary;
+  border: 1px solid $primary;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+  }
+  @if $isTransparent {
+    background-color: transparent;
+    color: $primary;
+    transition: 300ms ease background-color;
+    outline: 0;
+    &:hover,
+    &:focus {
+      background-color: $primary;
+      color: #fff;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin input {
+  font-size: 1rem;
+  padding: 0.7em;
+  border: 1px solid $paraColor;
+  outline: none;
+  border-radius: 0.25em;
+  font-family: inherit;
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+  }
+}
+
+.underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0.2rem;
+    width: 70%;
+    background: linear-gradient(to right, #e637b8, #43b6ff);
+    left: 0%;
+    bottom: -1%;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #e637b8, #43b6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

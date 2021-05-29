@@ -1,0 +1,123 @@
+.header__wrapper {
+  margin: 2rem;
+  .header__nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: $maxwidth;
+    margin: 0% auto;
+    @include breakpoint(large) {
+      padding: 0 2rem;
+    }
+  }
+}
+
+// Menu button
+
+.header__wrapper .hamburgar__menu {
+  height: 1.8rem;
+  width: 2.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: 300ms ease background-color;
+  @include breakpoint(medium) {
+    display: none;
+  }
+  .menu__line {
+    background-color: #fff;
+    height: 0.125rem;
+    position: relative;
+    width: 1.8rem;
+    pointer-events: none;
+    &::after,
+    &::before {
+      background-color: #fff;
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      pointer-events: none;
+      transition: 300ms ease transform;
+    }
+    &::after {
+      top: 7px;
+    }
+    &::before {
+      bottom: 7px;
+    }
+  }
+  &:hover {
+    background-color: rgba(99, 99, 99, 0.2);
+  }
+}
+
+// Nav__list
+
+.header__wrapper .nav__list {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  background-color: #fff;
+  padding: 2.5rem;
+  width: 85%;
+  top: 15%;
+  border-radius: 0.35rem;
+  display: grid;
+  gap: 1.2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  clip-path: circle(0% at 100% 0%);
+  transition: 300ms ease clip-path;
+  @include breakpoint(medium) {
+    gap: 2rem;
+    margin: 0%;
+  }
+  a {
+    color: $paraColor;
+    transition: 300ms ease color;
+    @include breakpoint(medium) {
+      color: rgba(255, 255, 255, 0.878);
+      font-size: 1rem;
+    }
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  @include breakpoint(medium) {
+    background-color: transparent;
+    display: flex;
+    transform: none;
+    padding: 0%;
+    width: unset;
+    position: static;
+    clip-path: circle(100% at 50% 50%);
+    box-shadow: none;
+    transition: none;
+  }
+}
+
+// Nav-active
+
+.header__nav.nav-active {
+  // Hamburgar menu
+  .menu__line {
+    background-color: transparent;
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+    &::before {
+      bottom: 0;
+      transform: rotate(45deg);
+    }
+  }
+  // Nav list
+  .nav__list {
+    clip-path: circle(100% at 50% 50%);
+  }
+}

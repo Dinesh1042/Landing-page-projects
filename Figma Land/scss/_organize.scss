@@ -1,0 +1,55 @@
+.organize {
+  margin: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+  &__img {
+    padding: 1rem;
+    img {
+      width: 100%;
+      max-width: 33rem;
+      margin: 0% auto;
+    }
+  }
+  &__text {
+    @include breakpoint(large) {
+      margin-top: 1rem;
+    }
+
+    p {
+      max-width: 40ch;
+      margin: 0% auto;
+      margin-top: 1rem;
+      @include breakpoint(medium) {
+        width: 80%;
+        margin: unset;
+        margin-top: 1rem;
+      }
+    }
+    h2 {
+      margin-top: 0%;
+    }
+    @include breakpoint(large) {
+      margin-top: 2rem;
+    }
+  }
+  .cta-btn {
+    margin-top: 2rem;
+    a {
+      display: inline-block;
+      @include button(true);
+    }
+  }
+  @include breakpoint(medium) {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: $maxwidth;
+    margin: 0% auto;
+    padding: 2rem;
+    margin-top: 4rem;
+    text-align: left;
+    > div {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+  }
+}

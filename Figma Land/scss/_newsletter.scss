@@ -1,0 +1,113 @@
+.newsletter {
+  margin: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+  @include breakpoint(medium) {
+    display: flex;
+    max-width: $maxwidth;
+    padding: 2rem;
+    margin: 0% auto;
+    margin-top: 4rem;
+    text-align: left;
+    > div {
+      flex-basis: 0%;
+      flex-grow: 1;
+    }
+  }
+}
+
+.newsletter .newsletter__img {
+  padding: 1rem;
+  @include breakpoint(medium) {
+    padding: 0;
+  }
+  img {
+    width: 100%;
+    max-width: 35rem;
+    margin: 0 auto;
+  }
+}
+
+.newsletter .newsletter__text {
+  margin-top: 1rem;
+
+  @include breakpoint(medium) {
+    margin-top: 0rem;
+    margin-left: 2rem;
+  }
+
+  @include breakpoint(large) {
+    margin-left: 5rem;
+  }
+
+  header {
+    h2 {
+      margin-top: 0;
+    }
+    p {
+      max-width: 35ch;
+      margin: 0% auto;
+      margin-top: 1rem;
+      @include breakpoint(medium) {
+        width: 80%;
+        margin: unset;
+        margin-top: 1rem;
+      }
+    }
+    > span {
+      font-size: 1rem;
+    }
+  }
+  // Form
+
+  .subscribe {
+    max-width: 30rem;
+    margin: 0% auto;
+    margin-top: 2rem;
+    text-align: left;
+    .col {
+      display: grid;
+      gap: 0.5rem;
+      grid-template-columns: 1fr;
+      margin-top: 0.5rem;
+      input {
+        @include input;
+      }
+      button {
+        @include button(false);
+        margin-top: 0.5rem;
+
+        @include breakpoint(tiny) {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          width: max-content;
+        }
+        @include breakpoint(small) {
+          display: unset;
+          height: 100%;
+          margin-top: 0%;
+        }
+        @include breakpoint(large) {
+          display: unset;
+          height: 100%;
+          margin-top: 0%;
+        }
+      }
+
+      @include breakpoint(small) {
+        display: grid;
+        grid-template-columns: 1fr 30%;
+      }
+      @include breakpoint(medium) {
+        max-width: 80%;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      @include breakpoint(large) {
+        display: grid;
+        grid-template-columns: 1fr 30%;
+      }
+    }
+  }
+}

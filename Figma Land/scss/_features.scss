@@ -1,0 +1,92 @@
+.feature {
+  margin: 2rem;
+  margin-top: 14rem;
+  &__text {
+    text-align: center;
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+  @include breakpoint(medium) {
+    max-width: $maxwidth;
+    margin: 0% auto;
+    padding: 2rem;
+    margin-top: 15rem;
+  }
+}
+
+.feature .cards {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 2rem;
+  .card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.35rem;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 300ms ease background-color, 300ms ease transform;
+    &:hover {
+      background-color: rgba(67, 183, 255, 0.055);
+      transform: scale(1.02);
+      &::before {
+        height: 10.6rem;
+        width: 10.6rem;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(to right, #43b6ff, #e637b8);
+      top: 0%;
+      left: 0%;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      height: 9.3rem;
+      width: 9.3rem;
+      background: #43b7ff2f url(../../asset/card_logo1.svg) no-repeat;
+      background-position: 22% 20%;
+      background-size: 3rem;
+      border-radius: 50%;
+      right: 0%;
+      bottom: 0%;
+      transform: translate(50%, 50%);
+      transition: 300ms ease;
+      transition-property: height, width;
+    }
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0%;
+    }
+    p {
+      width: 90%;
+    }
+  }
+  .card2 {
+    &:hover {
+      background-color: #e637b709;
+    }
+    &::before {
+      background: #e637b736 url(../../asset/card_logo2.svg) no-repeat;
+      background-position: 22% 20%;
+      background-size: 3rem;
+    }
+    &::after {
+      background: linear-gradient(to right, #e637b8, #43b6ff);
+    }
+  }
+  .card3::before {
+    background: #43b7ff2f url(../../asset/card_logo3.svg) no-repeat;
+    background-position: 22% 20%;
+    background-size: 3rem;
+  }
+}

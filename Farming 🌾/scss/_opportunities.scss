@@ -1,0 +1,30 @@
+.opportunities {
+  text-align: center;
+  margin: 2rem;
+  @include breakpoint(medium) {
+    max-width: $maxwidth;
+    padding: 2rem;
+    margin: 0% auto;
+  }
+  header {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  article {
+    padding: 2rem;
+    background-color: lighten($button, 35);
+    border-radius: 0.4rem;
+    h3 {
+      color: darken($primary, 25s);
+    }
+  }
+}

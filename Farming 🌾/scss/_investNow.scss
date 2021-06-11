@@ -1,0 +1,24 @@
+.investNow {
+  margin: 2rem;
+  text-align: center;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  @include breakpoint(medium) {
+    height: 50vh;
+  }
+  .container {
+    h2 {
+      max-width: 23ch;
+      span {
+        color: $primary;
+      }
+    }
+    button {
+      margin-top: 2rem;
+      @include button;
+    }
+  }
+}

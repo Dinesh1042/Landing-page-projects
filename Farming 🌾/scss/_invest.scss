@@ -1,0 +1,79 @@
+.invest {
+  text-align: center;
+  margin: 1rem;
+  margin-top: 4rem;
+  @include breakpoint(medium) {
+    max-width: $maxwidth;
+    padding: 1rem;
+    padding-top: 4rem;
+    margin: 0% auto;
+  }
+  header {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .card {
+    aspect-ratio: 1 / 0.7;
+    border-radius: 0.4rem;
+    padding: 1.5rem;
+  }
+
+  .card1 {
+    background: linear-gradient(to top, #0d1316, #0000005e),
+      url(../../asset/Farmtoday.png);
+    background-size: cover;
+  }
+  .card2 {
+    background: linear-gradient(to top, #0d1316, #0000005e),
+      url(../../asset/fullyFunded.png);
+    background-size: cover;
+  }
+
+  .card {
+    max-width: 33rem;
+    margin: 0% auto;
+    margin-top: 1.5rem;
+    h3 {
+      color: #f4f4f4;
+      font-size: 1.6rem;
+      font-size: clamp(1.6rem, 5vw, 2.1rem);
+      margin: 0%;
+    }
+    p {
+      color: #fff;
+      opacity: 0.7;
+      @include breakpoint(medium) {
+        width: 70%;
+      }
+    }
+
+    .title {
+      color: $primary;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+    }
+    .cta__btn {
+      @include breakpoint(large) {
+        margin-top: 2rem;
+      }
+      a {
+        display: inline-block;
+        @include button();
+      }
+    }
+    @include breakpoint(medium) {
+      text-align: left;
+      padding: 2rem;
+    }
+  }
+}

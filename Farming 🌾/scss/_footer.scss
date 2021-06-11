@@ -1,0 +1,60 @@
+footer {
+  background: #e4e4e4;
+
+  p {
+    max-width: unset;
+  }
+
+  .footerContainer {
+    text-align: center;
+    padding: 2rem;
+    padding-top: 4rem;
+    max-width: $maxwidth;
+    margin: 0% auto;
+
+    .link {
+      &:first-of-type {
+        margin-top: 3rem;
+        @include breakpoint(medium) {
+          margin-top: 0%;
+        }
+      }
+      p {
+        font-size: 1.125rem;
+        font-weight: 600;
+        letter-spacing: 0.125em;
+
+        @include breakpoint(medium) {
+          margin-top: 0%;
+        }
+      }
+      ul {
+        display: grid;
+        gap: 0.8rem;
+        a {
+          color: #607d8b;
+
+          &:hover {
+            color: $primary;
+            text-decoration: underline;
+          }
+        }
+      }
+      margin-top: 2rem;
+      @include breakpoint(medium) {
+        margin-top: 0%;
+      }
+    }
+    .copyright {
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      color: #a8a8a8;
+    }
+
+    @include breakpoint(medium) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: left;
+    }
+  }
+}

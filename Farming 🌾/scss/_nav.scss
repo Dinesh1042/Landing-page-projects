@@ -1,0 +1,121 @@
+.nav__header {
+  position: absolute;
+  transform: translateZ(10px);
+  width: 100%;
+  padding: 2rem;
+  z-index: 100;
+  nav {
+    max-width: $maxwidth;
+    margin: 0% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .col1 {
+    display: flex;
+    align-items: center;
+    img {
+      width: 100px;
+    }
+    ul {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      text-align: center;
+      background-color: #fff;
+      padding: 2.5rem;
+      width: 85%;
+      top: 100%;
+      border-radius: 0.35rem;
+      display: grid;
+      gap: 1.2rem;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      clip-path: circle(0% at 100% 0%);
+      transition: 300ms ease clip-path;
+      max-width: 30rem;
+      @include breakpoint(medium) {
+        gap: 2rem;
+        margin: 0%;
+        position: relative;
+        clip-path: circle(100% at 50% 50%);
+        max-width: unset;
+        box-shadow: none;
+        transition: none;
+        background-color: transparent;
+        display: flex;
+        padding: 0%;
+      }
+      a {
+        color: $para;
+        transition: 300ms ease color;
+        @include breakpoint(medium) {
+          color: $para;
+          font-size: 1rem;
+        }
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+  .col2 {
+    button {
+      @include button;
+      display: none;
+      transform: translateZ(20px);
+      @include breakpoint(medium) {
+        display: flex;
+      }
+    }
+
+    .hamburgar__menu {
+      height: 1.8rem;
+      width: 2.6rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      transition: 300ms ease background-color;
+      @include breakpoint(medium) {
+        display: none;
+      }
+      .menu__line {
+        background-color: #fff;
+        height: 0.125rem;
+        position: relative;
+        width: 1.8rem;
+        pointer-events: none;
+        &::after,
+        &::before {
+          background-color: #fff;
+          content: "";
+          height: 100%;
+          position: absolute;
+          width: 100%;
+          pointer-events: none;
+          transition: 300ms ease transform;
+        }
+        &::after {
+          top: 7px;
+        }
+        &::before {
+          bottom: 7px;
+        }
+      }
+      &:hover {
+        background-color: #80c6833d;
+      }
+    }
+  }
+}
+
+.nav__header.nav-active {
+  .col1 {
+    ul {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
+}

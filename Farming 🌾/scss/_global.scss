@@ -1,0 +1,59 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-size: 1.9rem;
+  margin-bottom: 0%;
+  font-size: clamp(1.9rem, 4.5vw, 3.3rem);
+}
+h2 {
+  margin-bottom: 0%;
+  font-size: 1.702rem;
+  font-size: clamp(1.702rem, 5vw, 2.4rem);
+}
+
+p {
+  font-size: 1.125rem;
+  letter-spacing: 0.00625em;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $para;
+  margin-top: 1rem;
+  max-width: 60ch;
+}
+
+ul {
+  padding-left: 0%;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@mixin button {
+  font-size: 1rem;
+  padding: 0.8em 1em;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  background-color: $button;
+  text-decoration: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  transition: 250ms ease background-color;
+  &:hover,
+  &:focus {
+    background-color: darken($button, 10);
+  }
+  outline-color: darken($button, 40);
+}

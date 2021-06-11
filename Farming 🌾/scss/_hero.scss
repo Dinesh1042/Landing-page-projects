@@ -1,0 +1,77 @@
+// Hero Text
+
+body {
+  overflow-x: hidden;
+}
+.hero {
+  max-width: $maxwidth;
+  margin: 0% auto;
+  &__text {
+    text-align: center;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @include breakpoint(medium) {
+      text-align: left;
+      display: unset;
+    }
+    h1 {
+      margin-top: -4rem;
+      @include breakpoint(medium) {
+        margin-top: 9rem;
+        width: 95%;
+      }
+    }
+    @include breakpoint(medium) {
+      p {
+        width: 80%;
+      }
+    }
+
+    mark {
+      background-color: transparent;
+      color: $primary;
+    }
+
+    .cta__btn {
+      margin-top: 2.5rem;
+      a {
+        display: block;
+        @include breakpoint(small) {
+          display: inline-block;
+        }
+        @include button();
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    > div {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+  }
+}
+
+// Hero Img
+
+.hero {
+  &__img {
+    @include breakpoint(medium) {
+      transform: translateX(20%);
+    }
+    img {
+      width: 100%;
+
+      @include breakpoint(medium) {
+        transform: scale(1.45);
+      }
+    }
+  }
+}

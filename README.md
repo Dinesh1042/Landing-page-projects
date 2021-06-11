@@ -9,6 +9,7 @@ This repository only contains of landing page of the websites
 |  4  | [Wild_](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Wild_)   |
 |  5  | [MedCare](https://github.com/Dinesh1042/Landing-page-projects/tree/main/MedCare)  |
 |  6  | [Figma Land](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Figma%20Land) |
+|  7  | [Zou - Farming Landing Page](https://github.com/Dinesh1042/Landing-page-projects/tree/main/Farming%20%F0%9F%8C%BE) |
 
 ### These projects are Builded with:
 
